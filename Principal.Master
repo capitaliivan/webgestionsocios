@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="WebCABDN.Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title></title>
+
+    <script src="/Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.dynDateTime.min.js" type="text/javascript"></script>
+    <script src="/Scripts/calendar-en.min.js" type="text/javascript"></script>
+    <link href="/Styles/calendar-blue.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="cabecera">
+
+            <div id ="contenidoCabecera">
+                <div id="barraHorizontal">
+                    <li><asp:LinkButton ID="lbSocios" runat="server" PostBackUrl="/Socio/Socio.aspx">Socios</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="lbCobro" runat="server" PostBackUrl="/Cobro/Cobros.aspx">Cobros</asp:LinkButton></li>
+                    <li><asp:LinkButton ID="lbFamilia" runat="server" PostBackUrl="/Familia/Familias.aspx">Familias</asp:LinkButton></li>
+                </div>
+                <div id="logotipo">
+                    <img src="/images/logo100.jpg"  alt="logo CABDN"/>
+
+                </div>
+                <div id="titulo">
+                    <h1>Web gestión de socios de CABDN</h1>
+                    <h2>Recuerda antes de crear nuevos socios q tengan cobros y familia</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div id="bajo">
+        
+            <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+        
+        
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+
+
+    </div>
+    </form>
+</body>
+</html>
