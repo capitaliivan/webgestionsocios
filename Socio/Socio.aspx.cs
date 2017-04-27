@@ -347,36 +347,44 @@ namespace WebCABDN.Socio
 
         private void CrearPDF()
         {
-            DataSet ds = new DataSet();
-            ds.DataSetName = "ds";
+            try
+            {
+                DataSet ds = new DataSet();
+                ds.DataSetName = "DataSet1";
 
-            DataTable dsData = new DataTable();
-            dsData = getReportData();
+                DataTable dsData = new DataTable();
+                dsData = getReportData();
 
-            Warning[] warnings;
-            string[] streamIds;
-            string mimeType = string.Empty;
-            string encoding = string.Empty;
-            string extension = string.Empty;
+                Warning[] warnings;
+                string[] streamIds;
+                string mimeType = string.Empty;
+                string encoding = string.Empty;
+                string extension = string.Empty;
 
-            LocalReport report = new LocalReport();
-            report.ReportPath = Server.MapPath("Report2.rdlc");
-            ReportDataSource rds = new ReportDataSource();
-            rds.Name = "ds";//This refers to the dataset name in the RDLC file  
-            rds.Value = dsData;
-            report.DataSources.Add(rds);
+                LocalReport report = new LocalReport();
+                report.ReportPath = Server.MapPath("Report1.rdlc");
+                ReportDataSource rds = new ReportDataSource();
+                rds.Name = "DataSet1";//This refers to the dataset name in the RDLC file  
+                rds.Value = dsData;
+                report.DataSources.Add(rds);
 
-            Byte[] mybytes = report.Render("PDF", null,
-                            out extension, out encoding,
-                            out mimeType, out streamIds, out warnings); //for exporting to PDF
+                Byte[] mybytes = report.Render("PDF", null,
+                                out extension, out encoding,
+                                out mimeType, out streamIds, out warnings); //for exporting to PDF
 
-            // Now that you have all the bytes representing the PDF report, buffer it and send it to the client.
-            Response.Buffer = true;
-            Response.Clear();
-            Response.ContentType = mimeType;
-            Response.AddHeader("content-disposition", "attachment; filename=" + "a.pdf");
-            Response.BinaryWrite(mybytes); // create the file
-            Response.Flush(); // send it to the client to download
+                // Now that you have all the bytes representing the PDF report, buffer it and send it to the client.
+                Response.Buffer = true;
+                Response.Clear();
+                Response.ContentType = mimeType;
+                Response.AddHeader("content-disposition", "attachment; filename=" + "a.pdf");
+                Response.BinaryWrite(mybytes); // create the file
+                Response.Flush(); // send it to the client to download
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
         private DataTable getReportData()

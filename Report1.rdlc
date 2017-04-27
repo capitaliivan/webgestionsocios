@@ -327,7 +327,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>E:\Programacion\C#\web\WebCABDN\WebCABDN\Socio\DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Programacion\C#\web\WebCABDN\WebCABDN\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>Socios</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
