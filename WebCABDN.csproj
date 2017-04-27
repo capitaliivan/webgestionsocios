@@ -97,8 +97,7 @@
     <Content Include="jquery-ui-1.11.4.custom\jquery-ui.theme.css" />
     <Content Include="jquery-ui-1.11.4.custom\jquery-ui.theme.min.css" />
     <Content Include="Scripts\calendar-en.min.js" />
-    <None Include="Properties\PublishProfiles\OneAndOne.pubxml" />
-    <None Include="Properties\PublishProfiles\Test.pubxml" />
+    <None Include="Properties\PublishProfiles\WindowsServer.pubxml" />
     <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
