@@ -17,7 +17,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPrincipal" runat="server">
     <h2>Bienvenidos a la web</h2>
     <p>
-        <table style="width:100%;">
+        <table style="width: 100%;">
             <tr>
                 <td class="auto-style1">User:</td>
                 <td>
@@ -28,7 +28,7 @@
             <tr>
                 <td class="auto-style2">Pass:</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="tbPass" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="tbPass" TextMode="Password" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style3"></td>
             </tr>
